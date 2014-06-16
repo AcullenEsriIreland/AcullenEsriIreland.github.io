@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html> 
   <head>
-    <meta https-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
       on iOS devices-->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
     <title></title>
 
-    <link rel="stylesheet" href="https://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" href="https://js.arcgis.com/3.9/js/esri/css/esri.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
     <link rel="stylesheet" href="css/layout.css">
 
-    <script src="https://js.arcgis.com/3.9/"></script>
+    <script src="http://js.arcgis.com/3.9/"></script>
     <script>
 
       require([
@@ -46,7 +46,7 @@
           ready(function(){
             parser.parse();
             // AJC remove proxy - no attachement config.defaults.io.proxyUrl = "/proxy";
-            config.defaults.geometryService = new GeometryService("https://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+            config.defaults.geometryService = new GeometryService("http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
 
             //check to see if a webmap was specified using URL params. If not use the 
             //hardcoded webmap id 
@@ -69,7 +69,7 @@
               var map = response.map;
                 dom.byId("title").innerHTML = response.itemInfo.item.title;
                 dom.byId("snippet").innerHTML = response.itemInfo.item.snippet;
-                dom.byId("dataSource").innerHTML = "<a target='_blank' href='https://www.arcgis.com/home/item.html?id=" + webmap + "'>View data details</a>";
+                dom.byId("dataSource").innerHTML = "<a target='_blank' href='http://www.arcgis.com/home/item.html?id=" + webmap + "'>View data details</a>";
 
 
                 //create the editor widget 
