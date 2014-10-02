@@ -66,7 +66,7 @@
             dojo.forEach(featureSet.features, function (feature, i) {
                 var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
                                new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
-                               new Color(0,200,200), 2), new Color(0,0,255)
+                               new Color(255,255,255), 2), new Color(255,255,255)
                              );
                 var graphic = new esri.Graphic(feature.geometry);
                 map.graphics.add(graphic);
