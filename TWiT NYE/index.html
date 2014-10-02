@@ -68,7 +68,7 @@
                                new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
                                new Color(0,200,200), 2), new Color(0,0,255)
                              );
-                var graphic = new esri.Graphic(feature.geometry, symbol);
+                var graphic = new esri.Graphic(feature.geometry);
                 map.graphics.add(graphic);
             });
  
