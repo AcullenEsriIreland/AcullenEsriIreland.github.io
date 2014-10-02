@@ -68,7 +68,7 @@
                                new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
                                new Color(this._outlineColour), 2), new Color(this._fillColour)
                              );
-            Array.forEach(featureSet.features, function (feature, i) {
+            dojo.forEach(featureSet.features, function (feature, i) {
                 var graphic = new esri.Graphic(feature.geometry, symbol);
                 map.graphics.add(graphic);
             });
