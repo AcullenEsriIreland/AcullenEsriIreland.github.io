@@ -25,6 +25,7 @@
         "esri/dijit/Scalebar",
         "esri/layers/FeatureLayer", 
         "esri/tasks/query",
+        "esri/symbols/SimpleFillSymbol",
         "dojo/domReady!"
       ], function(
         parser,
@@ -38,7 +39,8 @@
         Legend,
         Scalebar,
         FeatureLayer,
-        Query
+        Query,
+        SimpleFillSymbol
       ) {
         ready(function(){
 
@@ -55,7 +57,18 @@
           var featureLayer = map.getLayer(response.itemInfo.itemData.operationalLayers[0].id);
           var query = new Query();
           query.where = "zone = -10";
-          featureLayer.queryFeatures(query, function (featureSet) {
+          featureLayer.queryFeatures(query, function (featureSet) 
+          {
+
+            var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+                               new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                               new Color(this._outlineColour), 2), new Color(this._fillColour)
+                             );
+            Array.forEach(featureSet, function (feature, i) {
+                var graphic = new esri.Graphic(feature.geometry, symbol);
+                map.graphics.add(graphic);
+            });
+ 
             alert(featureSet);
           });
  
