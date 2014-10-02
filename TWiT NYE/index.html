@@ -48,16 +48,12 @@
 
           var map = response.map;
 
-          var service = map.getLayer(response.itemInfo.itemData.operationalLayers[0].id);
-          var firstLayer = response.itemInfo.itemData.operationalLayers[0].layers[0];
-          //var template = new esri.dijit.PopupTemplate(firstLayer.popupInfo);
-          // var popup = new esri.dijit.Popup(null, dojo.create("div"));
-          // var timeLayer = new esri.layers.FeatureLayer(service.url + "/0", {
-          //                   mode: esri.layers.FeatureLayer.MODE_SELECTION,
-          //                   outFields: ["*"],
-          //                   infoTemplate: template
-          
-          //               });
+          var featureLayer = map.getLayer(response.itemInfo.itemData.operationalLayers[0].id);
+          var query = new Query();
+          query.where = "zone = -10";
+          featureLayer.queryIds(query, function (objectIds) {
+            alert(objectIds);
+          });
  
 
 
