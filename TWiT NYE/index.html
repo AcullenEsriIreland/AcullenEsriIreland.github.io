@@ -63,6 +63,14 @@
           query.where = "zone = -10";
           featureLayer.queryFeatures(query, function (featureSet) 
           {
+<<<<<<< HEAD
+=======
+
+            var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+                               new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                               new Color(0,0,0), 2), new Color(0,200,200)
+                             );
+>>>>>>> parent of a74fc4a... color
             dojo.forEach(featureSet.features, function (feature, i) {
                 //var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
                 //               new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
@@ -72,6 +80,7 @@
                 map.graphics.add(graphic);
             });
  
+            alert(featureSet);
           });
  
 
