@@ -66,7 +66,7 @@
 
             var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
                                new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
-                               new Color(this._outlineColour), 2), new Color(this._fillColour)
+                               new Color(0,0,0), 2), new Color(0,200,200)
                              );
             dojo.forEach(featureSet.features, function (feature, i) {
                 var graphic = new esri.Graphic(feature.geometry, symbol);
