@@ -80,7 +80,7 @@
 
           function selectTimeZone(featureLayer, query, zone) 
           {
-            query.where = "zone = -1";
+            query.where = "zone = " + zone;
             featureLayer.queryFeatures(query, function (featureSet) 
             {
 
