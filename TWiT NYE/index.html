@@ -70,19 +70,7 @@
                              );
 
             dojo.forEach(featureSet.features, function (feature, i) {
-                //var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
-                //               new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
-                 //              new Color(255,255,255), 2), new Color(255,255,255)
-               //           );
-                    var sfs = new SimpleFillSymbol(
-          SimpleFillSymbol.STYLE_SOLID, 
-          new SimpleLineSymbol(
-            SimpleLineSymbol.STYLE_SOLID, 
-            new Color([111, 0, 255]), 
-            2
-          ), 
-          new Color([111, 0, 255, 0.15])
-        );
+                var sfs = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([111, 0, 255]), 2), new Color([111, 0, 255, 0.15]));
                 var graphic = new esri.Graphic(feature.geometry, sfs);
                 map.graphics.add(graphic);
             });
