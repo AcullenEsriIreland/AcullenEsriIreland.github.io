@@ -92,7 +92,7 @@
                                  new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
                                  new Color(0,0,0), 2), new Color(0,200,200)
                                );
-
+              map.gr.clear();
               dojo.forEach(featureSet.features, function (feature, i) {
                   var sfs = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([111, 0, 255]), 2), new Color([111, 0, 255, 0.15]));
                   var graphic = new esri.Graphic(feature.geometry, sfs);
