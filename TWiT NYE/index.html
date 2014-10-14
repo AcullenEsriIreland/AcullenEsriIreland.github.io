@@ -60,7 +60,7 @@
 
           var featureLayer = map.getLayer(response.itemInfo.itemData.operationalLayers[0].id);
           var query = new Query();
-          query.where = "zone = -10";
+          query.where = "zone = -1";
           featureLayer.queryFeatures(query, function (featureSet) 
           {
 
