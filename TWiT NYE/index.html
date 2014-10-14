@@ -60,25 +60,8 @@
 
           var featureLayer = map.getLayer(response.itemInfo.itemData.operationalLayers[0].id);
           var query = new Query();
-          query.where = "zone = -1";
-          featureLayer.queryFeatures(query, function (featureSet) 
-          {
-
-            var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
-                               new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
-                               new Color(0,0,0), 2), new Color(0,200,200)
-                             );
-
-            dojo.forEach(featureSet.features, function (feature, i) {
-                var sfs = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([111, 0, 255]), 2), new Color([111, 0, 255, 0.15]));
-                var graphic = new esri.Graphic(feature.geometry, sfs);
-                map.graphics.add(graphic);
-            });
  
-            //alert(featureSet);
-          });
- 
-
+          selectTimeZone(featureLayer,query,"-1");
 
           //add the scalebar 
           var scalebar = new Scalebar({
@@ -94,10 +77,26 @@
             layerInfos: legendLayers
           },"legend");
           legendDijit.startup();
-          hello();
 
-          function hello() 
+          function selectTimeZone(featureLayer, query, zone) 
           {
+            query.where = "zone = -1";
+            featureLayer.queryFeatures(query, function (featureSet) 
+            {
+
+              var symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+                                 new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+                                 new Color(0,0,0), 2), new Color(0,200,200)
+                               );
+
+              dojo.forEach(featureSet.features, function (feature, i) {
+                  var sfs = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([111, 0, 255]), 2), new Color([111, 0, 255, 0.15]));
+                  var graphic = new esri.Graphic(feature.geometry, sfs);
+                  map.graphics.add(graphic);
+              });
+   
+              //alert(featureSet);
+            });
             //alert('hello');
 
             var currentDate = new Date();
